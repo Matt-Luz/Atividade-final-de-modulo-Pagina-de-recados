@@ -5,4 +5,11 @@ HTML
 CSS
 Javascript
 
-Intuito da atividade é a criação de um sistema de recados funcional, com aplicação salva no LocalStorage.
+Intuito da atividade é a criação de um sistema de recados funcional, com dados salvos no LocalStorage.
+
+Atividade feita puramente com as tecnologias informadas acima.
+
+Link para visualização da aplicação: 
+
+
+Criada e desenvolvida por Matheus Luz.
