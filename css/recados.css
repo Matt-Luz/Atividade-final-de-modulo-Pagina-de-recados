@@ -1,0 +1,179 @@
+*{
+    padding: 0;
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #808080;
+    display: flexbox;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* barra superior */
+
+#olaUser {
+    font-size: 30px;
+    margin-left: 5rem;
+    color: white;
+}
+
+.bordaSuperior {
+    border: solid 3px;
+    padding: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 15%, rgba(192,192,192,1) 50%, rgba(0,0,0,1) 85%);
+}
+
+#btn-sair {
+    position: absolute;
+    left: 85%;
+    top: 25px;
+    width: 7rem;
+    padding: 5px;
+    border-radius: 50px;
+    border: 4px solid white;
+    ;
+}
+
+#btn-sair:hover {
+    background-color: #C0C0C0;
+}
+
+/* Parte dos recados */
+
+.entradasRecados {
+    padding: 20px;
+    padding-top: 3rem;
+    justify-content: center;
+    margin-left: 3vw;
+}
+
+#tituloRecados {
+    height: 40px;
+    width: 40vw;
+    border: solid;
+    border-radius: 10px;
+}
+
+#descricaoRecados {
+    height: 40px;
+    width: 40vw;
+    border: solid;
+    border-radius: 10px;
+}
+
+#btn-salvarRecado {
+    height: 40px;
+    width: 10vw;
+    border: solid;
+    border-radius: 10px;
+}
+
+#btn-salvarRecado:hover {
+    background-color: #C0C0C0;
+}
+
+::placeholder {
+    padding: 10px;
+}
+
+/* Tabela recados */
+
+.tabelaRecados {
+    padding: 20px; 
+}
+
+.tabela {
+    border-collapse: collapse;
+    width: 95vw;
+    height: 30vh;
+}
+
+tbody tr:hover {
+    background-color: #A9A9A9;
+}
+
+thead tr {
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+thead th {
+    padding: 10px;
+    background-color: #000000;
+    border: solid 3px black;
+    color: white;    
+}
+
+td {
+    border: 2px solid black;
+    padding: 10px;
+}
+
+/* Resposividade */
+
+@media only screen and (max-width: 850px) {
+    #btn-sair {
+        left: 80%;
+    }
+
+    #tituloRecados {
+        width: 35vw;
+    }
+    
+    #descricaoRecados {
+        width: 35vw;
+    }
+    
+    #btn-salvarRecado {
+        width: 10vw;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    #btn-sair {
+        left: 70%;
+    }
+
+    #olaUser {
+        font-size: 25px;
+        margin-left: 5px;
+    }
+
+    #tituloRecados {
+        width: 35vw;
+    }
+    
+    #descricaoRecados {
+        width: 35vw;
+    }
+    
+    #btn-salvarRecado {
+        width: 10vw;
+    }
+
+    .tabela {
+        width: 92vw;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    #btn-salvarRecado {
+        width: 14vw;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    #btn-sair {
+        left: 60%;
+    }
+
+    .tabela {
+        width: 90vw;
+    }
+
+};

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/recados.css">
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <title>Página de recados</title>
+</head>
+<body>
+
+    <nav class="bordaSuperior">
+
+        <h1 id="olaUser">Olá <strong>User</strong></h1>
+
+        <button id="btn-sair">SAIR</button>
+
+    </nav>
+
+    <main>
+
+        <div class="entradasRecados">
+
+            <form id="formRecados">
+                <input type="text" name="tituloRecados" id="tituloRecados" placeholder="Título">
+
+                <input type="text" name="descricaoRecados" id="descricaoRecados" placeholder="Informe a descrição do seu recado">
+
+                <button id="btn-salvarRecado">Salvar</button>
+            </form>
+
+        </div>
+
+        <div class="tabelaRecados">
+
+            <table class="tabela">
+                
+                <thead>
+                    
+                    <tr>
+
+                        <th>Título</th>
+                        <th>Descrição</th>
+                        <th>Ações</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="tbody">
+
+                </tbody>
+            
+            </table>
+
+            
+
+        </div>
+
+    </main>
+    
+    <script src="./js/recados.js"></script>
+</body>
+</html>

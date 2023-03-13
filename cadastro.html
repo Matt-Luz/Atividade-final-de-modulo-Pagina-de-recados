@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/cadastro.css">
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <title>Cadastrar usuário</title>
+</head>
+<body>
+
+    <main>
+
+        <section class="telaDeCadastro">
+
+            <div>
+                <figure class="imagens">
+                    <img id="img01" src="./images/Dicas-Como-fazer-um-mural-de-recados.jpeg" alt="exemplo mural" srcset="">
+                </figure>
+            </div>
+
+            <div class="cadastro">
+
+                <h1 id="titulo02">Cadastre-se:</h1>
+
+                <form id="cadastrarUsuario">
+                    <fieldset class="bordaCadastro">
+
+                        <label for="nomeCadastro"><b>Nome:</b></label><br>
+                        <input type="text" name="nomeCadastro" id="nomeCadastro" placeholder="Informe seu nome.">
+                        
+                        <br><br>
+
+                        <label for="emailCadastro"><b>E-mail:</b></label><br>
+                        <input type="email" name="emailCadastro" id="emailCadastro" placeholder="Digite seu e-mail." required>
+
+                        <br><br>
+
+                        <label for="senhaCadastro"><b>Senha:</b></label><br>
+                        <input type="password" name="senhaCadastro" id="senhaCadastro" placeholder="Digite sua senha." required>
+
+                        <br><br>
+
+                        <label for="confSenhaCadastro" id="confSenhaLabel"><b>Confirmar senha:</b></label><br>
+                        <input type="password" name="confSenhaCadastro" id="confSenhaCadastro" placeholder="Repita sua senha." required>
+
+                        <br><br>
+
+                        <button id="btn-cadastro" type="submit"><b>Cadastrar</b></button>
+                        
+                    </fieldset>
+                </form>
+
+                <figure>
+                    <img id="img02" src="./images/notebook.png" alt="mural figura" srcset="">
+                </figure>
+
+            </div>
+
+            
+
+        </section>
+
+    </main>
+
+
+    <script src="./js/cadastro.js"></script>
+</body>
+</html>

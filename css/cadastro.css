@@ -1,0 +1,170 @@
+*{
+    padding: 0;
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #808080;
+}
+
+/* Tela inteira */
+
+.telaDeLogin {
+    display: flex;
+}
+
+/* Lado direito */
+
+.imagens {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    justify-content: flex-end;
+}
+
+#img01 {
+    height: 100vh;
+    width: 100%;
+    border-left: 5px solid #D3D3D3;
+}
+
+/* Lado esquerdo */
+
+.cadastro {
+    align-items: center;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    position: absolute;
+    right: 50%;
+}
+
+#titulo02 {
+    text-align: center;
+    padding: 20px;
+    margin-top: 5vh;
+    font-size: 45px;
+}
+
+#btn-cadastro {
+    padding: 8px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    width: 10rem;
+    box-shadow: 5px 5px 0 #00000050;
+    -webkit-box-shadow: 5px 5px 0 #00000050;
+    -moz-box-shadow: 5px 5px 0 #00000050;
+}
+
+#btn-cadastro:hover{
+    background-color: #C0C0C0;
+}
+
+#nomeCadastro {
+    width: 25vw;
+    height: 25px;
+    border-radius: 5px;
+}
+
+#emailCadastro {
+    width: 25vw;
+    height: 25px;
+    border-radius: 5px;
+}
+
+#senhaCadastro {
+    width: 25vw;
+    height: 25px;
+    border-radius: 5px;
+}
+
+#confSenhaCadastro {
+    width: 25vw;
+    height: 25px;
+    border-radius: 5px;
+}
+
+::placeholder{
+    padding-left: 7px;
+}
+
+label {
+    margin-right: 20vw;
+}
+
+#confSenhaLabel {
+    margin-left: 6vw;
+}
+
+.bordaCadastro {
+    border: solid;
+    padding: 15px;
+    background-color: #A9A9A9;
+    border-radius: 10px;
+}
+
+#img02 {
+    width: 15vw;
+    margin-top: 10px;
+    height: 30vh;
+}
+
+/* Responsividade por tamanho de tela */
+
+@media only screen and (max-width: 900px) {
+    #img02 {
+        width: 15vw;
+        height: 20vh;
+        margin-top: 50px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .imagens {
+        display: none;
+        visibility: hidden;
+    }
+
+    #img02 {
+        width: 40vw;
+        height: 40vh;
+        margin-top: 50px;
+    }
+
+    #senhaCadastro {
+        width: 40vw;
+    }
+
+    #confSenhaCadastro {
+        width: 40vw;
+    }
+
+    #emailCadastro {
+        width: 40vw;
+    }
+
+    #nomeCadastro {
+        width: 40vw;
+    }
+
+    label {
+        margin-right: 5vw;
+    }
+
+    #confSenhaLabel {
+        margin-right: 10vw;
+    }
+
+    .cadastro {
+        position: absolute;
+        left: 25%;
+    }
+
+    #titulo02 {
+        font-size: 30px;
+    }
+}
+

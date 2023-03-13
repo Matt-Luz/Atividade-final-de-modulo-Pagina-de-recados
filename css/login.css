@@ -1,0 +1,142 @@
+*{
+    padding: 0;
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #808080;
+}
+
+/* Tela inteira */
+
+.telaDeLogin {
+    display: flex;
+}
+
+/* Lado esquerdo */
+
+.imagens {
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+#img01 {
+    height: 100vh;
+    width: 95%;
+    border-right: 5px solid #D3D3D3;
+}
+
+/* Lado direito */
+
+.login{
+    align-items: center;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+#titulo01 {
+    text-align: center;
+    padding: 20px;
+    margin-top: 10vh;
+    font-size: 35px;
+}
+
+#btn-login {
+    padding: 8px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    width: 10rem;
+    box-shadow: 5px 5px 0 #00000050;
+    -webkit-box-shadow: 5px 5px 0 #00000050;
+    -moz-box-shadow: 5px 5px 0 #00000050;
+}
+
+#btn-login:hover{
+    background-color: #C0C0C0;
+}
+
+#emailLogin {
+    width: 25vw;
+    height: 25px;
+    border-radius: 5px;
+}
+
+#senhaLogin {
+    width: 25vw;
+    height: 25px;
+    border-radius: 5px;
+}
+
+::placeholder{
+    padding-left: 7px;
+}
+
+label {
+    margin-right: 20vw;
+}
+
+p {
+    padding: 5px;
+}
+
+.bordaLogin {
+    border: solid;
+    padding: 10px;
+    background-color: #A9A9A9;
+    border-radius: 10px;
+}
+
+#img02 {
+    width: 15vw;
+    margin-top: 10px;
+    height: 30vh;
+}
+
+/* Responsividade por tamanho de tela */
+
+@media only screen and (max-width: 900px) {
+    #img02 {
+        width: 15vw;
+        height: 20vh;
+        margin-top: 50px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .imagens {
+        display: none;
+        visibility: hidden;
+    }
+
+    #img02 {
+        width: 40vw;
+        height: 40vh;
+        margin-top: 50px;
+    }
+
+    #senhaLogin {
+        width: 40vw;
+    }
+
+    #emailLogin {
+        width: 40vw;
+    }
+
+    label {
+        margin-right: 30vw;
+    }
+}
+
+
+/* Rodapé */
+
+/* .rodapé {
+    text-align: center;
+    border: solid 4px ;
+    border-radius: 5px;
+    background-color: ;
+} */
