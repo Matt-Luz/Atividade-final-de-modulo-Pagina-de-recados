@@ -14,5 +14,3 @@ Link para visualização da aplicação:
 
 Criada e desenvolvida por Matheus Luz.
 
-[image](https://user-images.githubusercontent.com/116320545/224882555-eed9bc55-a21c-4f28-ad1d-38a40c0db7a8.png)
-
