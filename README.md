@@ -9,7 +9,7 @@ Intuito da atividade é a criação de um sistema de recados funcional, com dado
 
 Atividade feita puramente com as tecnologias informadas acima.
 
-Link para visualização da aplicação: 
+Link para visualização da aplicação: <a href='https://matt-luz.github.io/Atividade-final-de-modulo-Pagina-de-recados/'>Clicando Aqui!</a>
 
 
 Criada e desenvolvida por Matheus Luz.
