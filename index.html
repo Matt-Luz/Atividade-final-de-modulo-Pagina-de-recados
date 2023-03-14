@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <title>Login - Recados</title>
+</head>
+<body>
+
+    <main>
+
+        <section class="telaDeLogin">
+
+            <div>
+                <figure class="imagens">
+                    <img id="img01" src="./images/Fotos-Como-fazer-um-mural-de-recados (1).jpeg" alt="" srcset="">
+                </figure>
+            </div>
+
+            <div class="login"> 
+
+                <h1 id="titulo01">Bem vindo a sua página de recados!</h1>
+
+                <form id="formLogin">
+                    <fieldset class="bordaLogin">
+
+                    <label for="emailLogin"><b>E-mail:</b></label><br>
+                    <input type="email" name="emailLogin" id="emailLogin" placeholder="Digite seu e-mail" required>
+
+                    <br><br>
+
+                    <label for="senhaLogin"><b>Senha:</b></label><br>
+                    <input type="password" name="senhaLogin" id="senhaLogin" placeholder="Informe sua senha:" minlength="6" required>
+                    
+                    <br><br>
+
+                    <button type="submit" id="btn-login"><b>Entrar</b></button>
+                    
+                    <br><br>
+
+                    <p>Não possui cadastro? Cadastre-se <strong><a id="linkCadastrar" href="cadastro.html">AQUI!</a></strong></p>
+
+                    </fieldset>
+                </form>
+
+                <img id="img02" src="./images/material-de-escritorio.png" alt="imagem post-it" srcset="">
+                
+            </div>
+        </section>
+        
+
+    </main>
+
+    <!-- <footer class="rodapé">Desenvolvido por <b>Matheus Luz &copy;</b></footer> -->
+
+    <script src="./js/login.js"></script>
+</body>
+</html>
