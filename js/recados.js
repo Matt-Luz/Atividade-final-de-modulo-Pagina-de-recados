@@ -1,4 +1,4 @@
-//Variaveis puxadas do html
+//Variaveis globais puxadas do html:
 
 const formRecados = document.getElementById('formRecados'); //Form para os recados
 
@@ -8,15 +8,9 @@ const tituloRecados = document.getElementById('tituloRecados');
 const descricaoRecados = document.getElementById('descricaoRecados');
 const submit = document.getElementById('btn-salvarRecado');
 
-////////////////////////////////////////////////////////////////
-
-
-
-////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
 
 const usuarioAtivo = JSON.parse(localStorage.getItem('usuarioAtivo'));
-
-const recadosLista = JSON.parse(localStorage.getItem('recadosLista') ?? '[]');
 
 //Verificação de usuário ativo:
 
@@ -25,11 +19,13 @@ if (!usuarioAtivo) {
     window.location.href = 'login.html'
 };
 
+//////////////////////////////////////////////////////////////////////////////////
 
 //Mudança nome do usuário na barra:
 
 document.getElementById('olaUser').textContent = `Olá ${usuarioAtivo.nome}`;
 
+/////////////////////////////////////////////////////////////////////////////////
 
 //Evento do botão de sair:
 
@@ -38,9 +34,9 @@ sair.addEventListener('click', () => {
     window.location.href = 'login.html'
 });
 
-////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
 
-//Validar se os campos estão em branco:
+//Validar se os campos do formulário estão em branco:
 
 function validaCampos() {
 
@@ -62,6 +58,7 @@ function validaCampos() {
 /////////////////////////////////////////////////////////////////
 
 //Função para declaração do ID:
+
 function proximoId() {
     let ultimoId = Number(localStorage.getItem('ultimoId') ?? '0');
     return ++ultimoId;
@@ -69,7 +66,7 @@ function proximoId() {
 
 ////////////////////////////////////////////////////////////////
 
-//Evento botão salvar recado
+//Evento botão salvar recado:
 
 submit.addEventListener('click', function (event) {
     event.preventDefault()
@@ -85,38 +82,42 @@ submit.addEventListener('click', function (event) {
         titulo: tituloRecados.value,
         descricao: descricaoRecados.value,
     }
-        
-    recadosLista.push(objRecados);
+    
     usuarioAtivo.listaDeRecados.push(objRecados);
         
-    localStorage.setItem('usuarioAtivo', JSON.stringify(usuarioAtivo.listaDeRecados));
     localStorage.setItem('ultimoId', objRecados.id);
-    localStorage.setItem('recadosLista', JSON.stringify(recadosLista));
 
-    const email = sessionStorage.getItem('email');
+    atualizarUserAtivo();
+    
+    apagarRecadosDaTela();
+
+    aparecerNaTela();
+
+    formRecados.reset();
 
 });
 
 //////////////////////////////////////////////////////////////////////
 
-
-
-//////////////////////////////////////////////////////////////////////
-
-//Evento e funções para ir para a tabela:
+//Evento e funções para ir para a tabela o recado:
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    for (const recadoAdc of recadosLista) {
+    aparecerNaTela();
+
+});
+
+function aparecerNaTela() {
+    
+    for (const recadoAdc of usuarioAtivo.listaDeRecados) {
         const tbody = document.querySelector('#tbody');
         const tr = document.createElement('tr');
+        tr.classList = 'linhaRecado';
         tr.id = `rec-${recadoAdc.id}`;
         adcRecadoNaLista(recadoAdc, tr);
         tbody.appendChild(tr);
     };
-
-
-});
+};
 
 function adcRecadoNaLista(recadoAdc, tr) {
     
@@ -144,43 +145,71 @@ function adcRecadoNaLista(recadoAdc, tr) {
 
 ///////////////////////////////////////////////////////////
 
+//Função apagar recados da tela:
+
+function apagarRecadosDaTela() {
+    const recadoLinha = document.querySelectorAll('.linhaRecado');
+    recadoLinha.forEach(recado => recado.remove());
+}
+
+//////////////////////////////////////////////////////////////////////////////
+
 //Funções botões:
 
 function excluirRecado(idRecado) {
-    const indiceRecado = recadosLista.findIndex((recado) => recado.id === idRecado);
+    const indiceRecado = usuarioAtivo.listaDeRecados.findIndex((recado) => recado.id === idRecado);
 
     if (indiceRecado === -1) {
         alert('Não foi possível localozar o recado que você quer excluir.');
         return;
     };
 
-    recadosLista.splice(indiceRecado, 1);
+    usuarioAtivo.listaDeRecados.splice(indiceRecado, 1);
 
-    localStorage.setItem('recadosLista', JSON.stringify(recadosLista));
+    localStorage.setItem('usuarioAtivo', JSON.stringify(usuarioAtivo));
 
     const trRecado = document.querySelector(`#rec-${idRecado}`);
     trRecado.remove();
+
+    atualizarUserAtivo();
 };
 
 function editarRecado(idRecado) {
-    const indiceRecado = recadosLista.findIndex((recado) => recado.id === idRecado);
+    const indiceRecado = usuarioAtivo.listaDeRecados.findIndex((recado) => recado.id === idRecado);
 
     if (indiceRecado === -1) {
         alert('Não foi possível localozar o recado que você quer excluir.');
         return;
     };
 
-    const novoTitulo = prompt('Titulo: ', recadosLista[indiceRecado].titulo);
-    const novaDescricao = prompt('Descrição: ', recadosLista[indiceRecado].descricao);
+    const novoTitulo = prompt('Titulo: ', usuarioAtivo.listaDeRecados[indiceRecado].titulo);
+    const novaDescricao = prompt('Descrição: ', usuarioAtivo.listaDeRecados[indiceRecado].descricao);
 
-    recadosLista[indiceRecado].titulo = novoTitulo;
-    recadosLista[indiceRecado].descricao = novaDescricao;
+    usuarioAtivo.listaDeRecados[indiceRecado].titulo = novoTitulo;
+    usuarioAtivo.listaDeRecados[indiceRecado].descricao = novaDescricao;
 
-    localStorage.setItem('recadosLista', JSON.stringify(recadosLista));
+    localStorage.setItem('usuarioAtivo', JSON.stringify(usuarioAtivo));
 
     const trEditarRecado = document.querySelector(`#rec-${idRecado}`);
     trEditarRecado.innerHTML = ''
 
-    adcRecadoNaLista(recadosLista[indiceRecado], trEditarRecado);
+    adcRecadoNaLista(usuarioAtivo.listaDeRecados[indiceRecado], trEditarRecado);
+
+    atualizarUserAtivo();
 
 };
+
+//////////////////////////////////////////////////////////////////////////////////
+
+//Função atualizar usuário ativo:
+
+function atualizarUserAtivo() {
+    const listaArmazenada = JSON.parse(localStorage.getItem('listaUsuarios'));
+    
+    const i = listaArmazenada.findIndex((usuario) => usuario.email === usuarioAtivo.email);
+
+    listaArmazenada.splice(i, 1, usuarioAtivo);
+
+    localStorage.setItem('listaUsuarios', JSON.stringify(listaArmazenada));
+    localStorage.setItem('usuarioAtivo', JSON.stringify(usuarioAtivo));
+}
